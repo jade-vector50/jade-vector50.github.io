@@ -1,0 +1,1603 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>笔盒 - 原创影像 | 文具与手作生活视频品牌官网</title>
+<meta name="description" content="笔盒官方网站，专注文具、手作与桌面美学的视频内容社区，汇聚原创创作者与真实生活影像，持续运营的品质内容生态。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ff6b3d'/%3E%3Crect x='14' y='22' width='36' height='22' rx='5' fill='%23fff3e9'/%3E%3Crect x='19' y='27' width='26' height='3' rx='1.5' fill='%23ff6b3d'/%3E%3Ccircle cx='24' cy='36' r='3' fill='%23ff6b3d'/%3E%3Crect x='31' y='34' width='14' height='4' rx='2' fill='%23ffb08a'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bh-orange:#ff6b3d;
+  --bh-orange-deep:#e04e22;
+  --bh-amber:#ffb08a;
+  --bh-cream:#fff8f2;
+  --bh-ink:#2b2320;
+  --bh-ink-soft:#6a5c55;
+  --bh-line:#f0e2d8;
+  --bh-card:#ffffff;
+  --bh-shadow:0 10px 30px rgba(200,110,70,.12);
+  --bh-radius:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  background:var(--bh-cream);
+  color:var(--bh-ink);
+  line-height:1.75;
+  padding-top:96px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+img,svg{display:block;max-width:100%;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;}
+.bh-container{width:min(1180px,92%);margin:0 auto;}
+.bh-section{padding:64px 0;}
+.bh-section-head{margin-bottom:36px;}
+.bh-eyebrow{
+  display:inline-block;font-size:12px;letter-spacing:.22em;
+  color:var(--bh-orange-deep);font-weight:700;text-transform:uppercase;
+  background:#ffe8dd;padding:4px 12px;border-radius:999px;margin-bottom:12px;
+}
+.bh-h2{
+  font-size:clamp(24px,3.2vw,34px);font-weight:800;letter-spacing:.01em;
+  line-height:1.3;
+}
+.bh-section-desc{color:var(--bh-ink-soft);max-width:720px;margin-top:10px;font-size:15px;}
+.bh-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 26px;border-radius:999px;font-weight:700;font-size:15px;
+  transition:.25s;border:1.6px solid transparent;
+}
+.bh-btn-primary{background:var(--bh-orange);color:#fff;box-shadow:0 8px 20px rgba(255,107,61,.28);}
+.bh-btn-primary:hover{background:var(--bh-orange-deep);transform:translateY(-2px);}
+.bh-btn-ghost{background:#fff;color:var(--bh-orange-deep);border-color:#ffd3bf;}
+.bh-btn-ghost:hover{background:#fff2ea;transform:translateY(-2px);}
+
+/* ============ 吸顶公告 + 页头 ============ */
+.bh-sticky-wrap{position:fixed;top:0;left:0;right:0;z-index:999;}
+.bh-announce{
+  background:linear-gradient(90deg,#2b2320,#4a382f 55%,#6b4a38);
+  color:#ffe9dc;font-size:13px;padding:9px 0;overflow:hidden;
+}
+.bh-announce-inner{display:flex;align-items:center;gap:14px;width:min(1180px,92%);margin:0 auto;}
+.bh-announce-tag{
+  flex:none;background:var(--bh-orange);color:#fff;font-weight:800;
+  font-size:11px;letter-spacing:.1em;padding:2px 9px;border-radius:6px;
+}
+.bh-announce-list{display:flex;gap:34px;overflow:hidden;white-space:nowrap;flex:1;}
+.bh-announce-list li{opacity:.9;}
+.bh-announce-list li b{color:#ffb08a;}
+.bh-site-header{background:rgba(255,248,242,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--bh-line);}
+.bh-header-inner{
+  display:flex;align-items:center;gap:28px;height:64px;
+  width:min(1180px,92%);margin:0 auto;
+}
+.bh-logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:20px;letter-spacing:.02em;}
+.bh-logo-mark{width:34px;height:34px;flex:none;}
+.bh-logo small{font-size:10px;font-weight:600;color:var(--bh-ink-soft);letter-spacing:.18em;display:block;line-height:1;}
+.bh-nav{display:flex;gap:4px;margin-left:8px;flex-wrap:wrap;}
+.bh-nav a{
+  padding:8px 14px;border-radius:999px;font-size:14.5px;font-weight:600;color:var(--bh-ink-soft);
+  transition:.2s;
+}
+.bh-nav a:hover,.bh-nav a.is-active{background:#ffe8dd;color:var(--bh-orange-deep);}
+.bh-header-tools{display:flex;align-items:center;gap:12px;margin-left:auto;}
+.bh-search{
+  display:flex;align-items:center;background:#fff;border:1.5px solid var(--bh-line);
+  border-radius:999px;padding:4px 6px 4px 14px;width:220px;transition:.2s;
+}
+.bh-search:focus-within{border-color:var(--bh-orange);box-shadow:0 0 0 4px rgba(255,107,61,.1);}
+.bh-search input{border:none;outline:none;flex:1;font-size:13.5px;background:transparent;color:var(--bh-ink);width:100%;}
+.bh-search button{background:var(--bh-orange);color:#fff;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:700;}
+.bh-search-feedback{
+  position:absolute;top:100%;margin-top:6px;left:0;right:0;
+  background:#fff;border:1px solid var(--bh-line);border-radius:12px;
+  box-shadow:var(--bh-shadow);padding:8px;font-size:13px;color:var(--bh-ink-soft);
+  display:none;z-index:20;
+}
+.bh-search-feedback.is-open{display:block;}
+.bh-search-feedback span{color:var(--bh-orange-deep);font-weight:700;}
+.bh-search-wrap{position:relative;}
+.bh-burger{display:none;flex-direction:column;gap:5px;padding:8px;}
+.bh-burger span{width:22px;height:2.4px;background:var(--bh-ink);border-radius:2px;transition:.25s;}
+
+/* ============ 首屏 ============ */
+.bh-hero{padding:56px 0 40px;position:relative;overflow:hidden;}
+.bh-hero::before{
+  content:"";position:absolute;width:560px;height:560px;border-radius:50%;
+  background:radial-gradient(circle,#ffe1d1 0%,transparent 68%);
+  top:-180px;right:-140px;z-index:-1;
+}
+.bh-hero-grid{display:grid;grid-template-columns:6fr 4fr;gap:48px;align-items:center;}
+.bh-hero-title{font-size:clamp(36px,5.4vw,60px);font-weight:900;line-height:1.1;letter-spacing:-.01em;}
+.bh-hero-title em{
+  font-style:normal;color:var(--bh-orange-deep);position:relative;
+}
+.bh-hero-title em::after{
+  content:"";position:absolute;left:0;right:0;bottom:4px;height:10px;
+  background:#ffd9c6;z-index:-1;border-radius:4px;
+}
+.bh-hero-sub{margin-top:20px;font-size:16.5px;color:var(--bh-ink-soft);max-width:540px;}
+.bh-hero-actions{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap;}
+.bh-hero-stats{display:flex;gap:38px;margin-top:42px;flex-wrap:wrap;}
+.bh-hero-stats div dt{font-size:26px;font-weight:900;color:var(--bh-orange-deep);line-height:1.1;}
+.bh-hero-stats div dd{font-size:13px;color:var(--bh-ink-soft);margin-top:4px;}
+.bh-hero-visual{position:relative;}
+.bh-hero-visual svg{border-radius:24px;box-shadow:var(--bh-shadow);width:100%;height:auto;}
+.bh-hero-badge{
+  position:absolute;bottom:-18px;left:-18px;background:#fff;border-radius:16px;
+  padding:12px 18px;box-shadow:var(--bh-shadow);display:flex;align-items:center;gap:10px;
+  font-size:13px;font-weight:700;
+}
+.bh-hero-badge i{width:9px;height:9px;border-radius:50%;background:#38b26d;box-shadow:0 0 0 4px #d7f2e2;display:inline-block;}
+
+/* ============ 品牌解析 ============ */
+.bh-about{background:#fff;border-top:1px solid var(--bh-line);border-bottom:1px solid var(--bh-line);}
+.bh-about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+.bh-about-text p{color:#4c403a;font-size:15.3px;margin-bottom:15px;text-align:justify;}
+.bh-about-text p strong{color:var(--bh-orange-deep);}
+.bh-about-side{display:flex;flex-direction:column;gap:16px;}
+.bh-pillar{
+  background:var(--bh-cream);border:1px solid var(--bh-line);border-radius:var(--bh-radius);
+  padding:20px 22px;display:flex;gap:16px;align-items:flex-start;
+}
+.bh-pillar-num{
+  font-size:22px;font-weight:900;color:#fff;background:var(--bh-orange);
+  width:42px;height:42px;flex:none;border-radius:12px;display:grid;place-items:center;
+}
+.bh-pillar h3{font-size:16px;margin-bottom:4px;}
+.bh-pillar p{font-size:13.5px;color:var(--bh-ink-soft);line-height:1.65;}
+
+/* ============ 焦点视频 ============ */
+.bh-focus-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:24px;}
+.bh-vcard{
+  background:var(--bh-card);border-radius:var(--bh-radius);overflow:hidden;
+  box-shadow:0 4px 18px rgba(200,110,70,.08);transition:.28s;position:relative;
+  display:flex;flex-direction:column;
+}
+.bh-vcard:hover{transform:translateY(-5px);box-shadow:var(--bh-shadow);}
+.bh-vcover{position:relative;aspect-ratio:16/9;overflow:hidden;background:#f3e5db;}
+.bh-vcover svg{width:100%;height:100%;}
+.bh-vcover object{width:100%;height:100%;}
+.bh-vplay{
+  position:absolute;inset:0;margin:auto;width:52px;height:52px;border-radius:50%;
+  background:rgba(255,255,255,.9);display:grid;place-items:center;
+  box-shadow:0 4px 14px rgba(0,0,0,.18);transition:.25s;
+}
+.bh-vcard:hover .bh-vplay{transform:scale(1.12);background:var(--bh-orange);}
+.bh-vplay::after{
+  content:"";border-style:solid;border-width:9px 0 9px 15px;
+  border-color:transparent transparent transparent var(--bh-orange-deep);
+  margin-left:4px;transition:.25s;
+}
+.bh-vcard:hover .bh-vplay::after{border-left-color:#fff;}
+.bh-vtag{
+  position:absolute;top:12px;left:12px;background:rgba(43,35,32,.78);color:#fff;
+  font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:999px;backdrop-filter:blur(4px);
+}
+.bh-vduration{
+  position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,.6);color:#fff;
+  font-size:11.5px;padding:2px 8px;border-radius:5px;letter-spacing:.04em;
+}
+.bh-vbody{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1;}
+.bh-vbody h3{font-size:18px;line-height:1.45;margin-bottom:8px;}
+.bh-vbody p{font-size:13.8px;color:var(--bh-ink-soft);flex:1;line-height:1.65;}
+.bh-vmeta{
+  display:flex;align-items:center;gap:10px;margin-top:16px;padding-top:14px;
+  border-top:1px dashed var(--bh-line);font-size:12.5px;color:var(--bh-ink-soft);
+}
+.bh-avatar{
+  width:30px;height:30px;border-radius:50%;flex:none;display:grid;place-items:center;
+  color:#fff;font-weight:800;font-size:13px;background:var(--bh-orange);
+}
+.bh-vmeta .bh-like{
+  margin-left:auto;display:inline-flex;align-items:center;gap:5px;font-weight:700;
+  color:var(--bh-ink-soft);transition:.2s;font-size:12.5px;
+}
+.bh-vmeta .bh-like:hover,.bh-vmeta .bh-like.is-liked{color:var(--bh-orange-deep);}
+.bh-vmeta .bh-like.is-liked svg{fill:var(--bh-orange);stroke:var(--bh-orange);}
+.bh-focus-side{display:grid;gap:18px;grid-template-rows:repeat(2,1fr);}
+.bh-focus-side .bh-vcard{border-radius:16px;}
+.bh-focus-side .bh-vbody{padding:14px 16px 16px;}
+.bh-focus-side .bh-vbody h3{font-size:15px;}
+.bh-focus-side .bh-vbody p{display:none;}
+.bh-focus-side .bh-vmeta{margin-top:10px;padding-top:10px;border-top:none;}
+
+/* ============ 视频流瀑布/网格 ============ */
+.bh-stream-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.bh-stream-grid .bh-vcover{aspect-ratio:16/9;}
+
+/* ============ 专题 ============ */
+.bh-topic{background:#2b2320;color:#fff;border-radius:26px;overflow:hidden;}
+.bh-topic-head{padding:46px 46px 0;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;}
+.bh-topic-head .bh-eyebrow{background:rgba(255,176,138,.18);color:#ffb08a;}
+.bh-topic-head .bh-section-desc{color:#b8a79e;}
+.bh-topic-list{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:36px 46px 46px;}
+.bh-topic-item{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  border-radius:16px;padding:22px;transition:.25s;position:relative;overflow:hidden;
+}
+.bh-topic-item:hover{background:rgba(255,107,61,.14);border-color:rgba(255,107,61,.5);transform:translateY(-4px);}
+.bh-topic-item .bh-topic-idx{font-size:12px;letter-spacing:.2em;color:#ffb08a;font-weight:800;}
+.bh-topic-item h3{font-size:17px;margin:8px 0 8px;}
+.bh-topic-item p{font-size:13.2px;color:#bcaba2;line-height:1.7;}
+.bh-topic-status{
+  display:inline-block;margin-top:14px;font-size:11.5px;font-weight:700;
+  color:#ffd0b8;background:rgba(255,176,138,.15);padding:3px 10px;border-radius:999px;
+}
+
+/* ============ 创作者矩阵 ============ */
+.bh-creator-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.bh-creator-card{
+  background:#fff;border-radius:var(--bh-radius);padding:26px 22px;text-align:center;
+  border:1px solid var(--bh-line);transition:.28s;
+}
+.bh-creator-card:hover{transform:translateY(-5px);box-shadow:var(--bh-shadow);border-color:#ffd3bf;}
+.bh-creator-ava{
+  width:66px;height:66px;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center;
+  color:#fff;font-weight:900;font-size:24px;position:relative;
+}
+.bh-creator-ava::after{
+  content:"";position:absolute;inset:-4px;border-radius:50%;
+  border:2px dashed #ffd3bf;animation:bh-spin 22s linear infinite;
+}
+@keyframes bh-spin{to{transform:rotate(360deg);}}
+.bh-creator-card h3{font-size:16px;}
+.bh-creator-card .bh-skill{font-size:12px;color:var(--bh-orange-deep);font-weight:700;margin:3px 0 10px;}
+.bh-creator-card p{font-size:13px;color:var(--bh-ink-soft);line-height:1.65;min-height:60px;}
+.bh-creator-card .bh-cstat{display:flex;justify-content:center;gap:18px;font-size:12px;margin-top:12px;color:var(--bh-ink-soft);}
+.bh-creator-card .bh-cstat b{display:block;color:var(--bh-ink);font-size:14px;}
+
+/* ============ 亮点/随笔 ============ */
+.bh-notes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.bh-note{
+  background:#fff;border-radius:var(--bh-radius);padding:26px;border:1px solid var(--bh-line);
+  transition:.25s;
+}
+.bh-note:hover{border-color:#ffd3bf;box-shadow:var(--bh-shadow);}
+.bh-note-date{font-size:12px;color:var(--bh-orange-deep);font-weight:800;letter-spacing:.08em;}
+.bh-note h3{font-size:17px;margin:10px 0 8px;line-height:1.45;}
+.bh-note p{font-size:13.6px;color:var(--bh-ink-soft);line-height:1.7;}
+.bh-note a.bh-more{display:inline-block;margin-top:14px;font-size:13px;font-weight:700;color:var(--bh-orange-deep);}
+.bh-note a.bh-more:hover{text-decoration:underline;}
+
+/* ============ 壁纸/影像墙 ============ */
+.bh-wall-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:150px;gap:14px;}
+.bh-wall-item{
+  border-radius:14px;overflow:hidden;position:relative;background:#f3e5db;
+}
+.bh-wall-item svg{width:100%;height:100%;object-fit:cover;}
+.bh-wall-item.bh-wall-lg{grid-column:span 2;grid-row:span 2;}
+.bh-wall-item.bh-wall-wide{grid-column:span 2;grid-row:span 1;}
+.bh-wall-item span{
+  position:absolute;inset:auto 10px 10px 10px;color:#fff;font-size:12px;font-weight:700;
+  text-shadow:0 1px 4px rgba(0,0,0,.4);
+}
+
+/* ============ 动态与FAQ ============ */
+.bh-split{display:grid;grid-template-columns:1.05fr 1fr;gap:44px;align-items:start;}
+.bh-update-list li{
+  display:flex;gap:18px;padding:18px 0;border-bottom:1px dashed var(--bh-line);
+}
+.bh-update-list li:first-child{padding-top:0;}
+.bh-update-list time{
+  flex:none;width:76px;font-size:12px;font-weight:800;color:var(--bh-orange-deep);
+  letter-spacing:.04em;padding-top:2px;
+}
+.bh-update-list h3{font-size:15.5px;margin-bottom:4px;}
+.bh-update-list p{font-size:13.3px;color:var(--bh-ink-soft);line-height:1.65;}
+.bh-faq details{
+  background:#fff;border:1px solid var(--bh-line);border-radius:12px;
+  padding:16px 20px;margin-bottom:12px;transition:.2s;
+}
+.bh-faq details[open]{border-color:#ffd3bf;box-shadow:0 6px 18px rgba(200,110,70,.08);}
+.bh-faq summary{
+  cursor:pointer;font-weight:700;font-size:14.8px;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+.bh-faq summary::-webkit-details-marker{display:none;}
+.bh-faq summary::after{content:"+";font-size:20px;color:var(--bh-orange);font-weight:400;transition:.25s;}
+.bh-faq details[open] summary::after{transform:rotate(45deg);}
+.bh-faq details p{font-size:13.5px;color:var(--bh-ink-soft);margin-top:10px;line-height:1.7;}
+
+/* ============ 评价 ============ */
+.bh-review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.bh-review{
+  background:#fff;border-radius:16px;padding:22px;border:1px solid var(--bh-line);
+  border-top:4px solid var(--bh-orange);font-size:13.7px;line-height:1.75;color:#4c403a;
+}
+.bh-review-head{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.bh-review-head .bh-avatar{width:34px;height:34px;font-size:14px;}
+.bh-review-head b{font-size:13.5px;display:block;}
+.bh-review-head span{font-size:11.5px;color:var(--bh-ink-soft);}
+.bh-review-stars{color:#ffb02e;font-size:12px;letter-spacing:.1em;margin-bottom:8px;}
+
+/* ============ 合作 / 联系方式 ============ */
+.bh-partners{display:flex;flex-wrap:wrap;gap:14px;}
+.bh-partner{
+  background:#fff;border:1px solid var(--bh-line);border-radius:12px;
+  padding:14px 24px;font-weight:800;font-size:14px;color:var(--bh-ink-soft);
+  letter-spacing:.03em;transition:.2s;
+}
+.bh-partner:hover{color:var(--bh-orange-deep);border-color:#ffd3bf;transform:translateY(-2px);}
+.bh-contact-box{
+  background:linear-gradient(135deg,#fff1e8,#fff8f2 60%,#ffe3d4);
+  border:1px solid #ffd9c6;border-radius:24px;padding:44px;
+  display:flex;justify-content:space-between;gap:30px;align-items:center;flex-wrap:wrap;
+}
+.bh-contact-box h2{font-size:26px;margin-bottom:10px;}
+.bh-contact-box p{font-size:14.5px;color:var(--bh-ink-soft);max-width:520px;}
+.bh-contact-tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;}
+.bh-contact-tags span{
+  background:#fff;border:1px solid #ffd9c6;border-radius:999px;
+  padding:5px 14px;font-size:12.5px;font-weight:700;color:var(--bh-orange-deep);
+}
+
+/* ============ 页脚 ============ */
+.bh-footer{background:#2b2320;color:#cbbcb3;padding:56px 0 28px;margin-top:20px;}
+.bh-footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;}
+.bh-footer h3{color:#fff;font-size:15px;margin-bottom:14px;}
+.bh-footer p{font-size:13.2px;line-height:1.8;}
+.bh-footer-links li{margin-bottom:9px;font-size:13.2px;}
+.bh-footer-links a:hover{color:#ffb08a;}
+.bh-footer-logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:20px;color:#fff;margin-bottom:12px;}
+.bh-footer-bottom{
+  margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12.5px;color:#9c8d84;
+}
+
+/* ============ 弹窗 & Toast ============ */
+.bh-modal-mask{
+  position:fixed;inset:0;background:rgba(43,35,32,.55);z-index:1200;
+  display:none;align-items:center;justify-content:center;padding:20px;
+}
+.bh-modal-mask.is-open{display:flex;}
+.bh-modal{
+  background:#fff;border-radius:20px;max-width:520px;width:100%;padding:32px;
+  max-height:85vh;overflow:auto;animation:bh-pop .25s ease;
+}
+@keyframes bh-pop{from{transform:scale(.95);opacity:0;}to{transform:scale(1);opacity:1;}}
+.bh-modal h3{font-size:20px;margin-bottom:8px;}
+.bh-modal p.bh-modal-sub{font-size:13.5px;color:var(--bh-ink-soft);margin-bottom:20px;}
+.bh-modal label{display:block;font-size:13px;font-weight:700;margin:14px 0 6px;}
+.bh-modal input,.bh-modal textarea{
+  width:100%;border:1.5px solid var(--bh-line);border-radius:10px;padding:10px 14px;
+  font-family:inherit;font-size:14px;outline:none;transition:.2s;resize:vertical;
+}
+.bh-modal input:focus,.bh-modal textarea:focus{border-color:var(--bh-orange);box-shadow:0 0 0 4px rgba(255,107,61,.1);}
+.bh-modal-actions{display:flex;gap:12px;margin-top:22px;justify-content:flex-end;}
+.bh-modal-close{position:absolute;top:14px;right:16px;font-size:22px;color:#a99a91;line-height:1;}
+.bh-modal-rel{position:relative;}
+.bh-share-list{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;}
+.bh-share-list a{
+  background:var(--bh-cream);border:1px solid var(--bh-line);border-radius:10px;
+  padding:9px 18px;font-size:13px;font-weight:700;transition:.2s;
+}
+.bh-share-list a:hover{background:#ffe8dd;color:var(--bh-orange-deep);}
+.bh-toast{
+  position:fixed;left:50%;bottom:36px;transform:translate(-50%,20px);
+  background:#2b2320;color:#fff;font-size:13.5px;font-weight:600;
+  padding:11px 24px;border-radius:999px;opacity:0;pointer-events:none;
+  transition:.3s;z-index:1500;box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+.bh-toast.is-show{opacity:1;transform:translate(-50%,0);}
+.bh-backtop{
+  position:fixed;right:22px;bottom:26px;width:46px;height:46px;border-radius:50%;
+  background:var(--bh-orange);color:#fff;display:grid;place-items:center;
+  box-shadow:0 8px 20px rgba(255,107,61,.35);z-index:900;
+  opacity:0;pointer-events:none;transition:.3s;font-size:18px;
+}
+.bh-backtop.is-show{opacity:1;pointer-events:auto;}
+.bh-backtop:hover{background:var(--bh-orange-deep);transform:translateY(-3px);}
+
+/* ============ 响应式 ============ */
+@media (max-width:1024px){
+  .bh-hero-grid,.bh-about-grid,.bh-split{grid-template-columns:1fr;}
+  .bh-stream-grid,.bh-topic-list,.bh-notes-grid,.bh-review-grid{grid-template-columns:repeat(2,1fr);}
+  .bh-creator-grid{grid-template-columns:repeat(2,1fr);}
+  .bh-footer-grid{grid-template-columns:1fr 1fr;}
+  .bh-focus-grid{grid-template-columns:1fr;}
+  .bh-focus-side{grid-template-rows:none;grid-template-columns:1fr 1fr;}
+}
+@media (max-width:720px){
+  body{padding-top:104px;}
+  .bh-announce-list{overflow:hidden;}
+  .bh-announce-list li:nth-child(n+2){display:none;}
+  .bh-nav{
+    display:none;position:absolute;top:100%;left:0;right:0;background:#fff;
+    flex-direction:column;padding:12px 5%;gap:2px;border-bottom:1px solid var(--bh-line);
+    box-shadow:0 12px 24px rgba(0,0,0,.08);
+  }
+  .bh-nav.is-open{display:flex;}
+  .bh-nav a{padding:10px 14px;}
+  .bh-burger{display:flex;}
+  .bh-search{display:none;}
+  .bh-stream-grid,.bh-topic-list,.bh-notes-grid,.bh-review-grid,.bh-focus-side{grid-template-columns:1fr;}
+  .bh-creator-grid{grid-template-columns:1fr 1fr;}
+  .bh-wall-grid{grid-template-columns:repeat(2,1fr);}
+  .bh-wall-item.bh-wall-lg{grid-column:span 2;}
+  .bh-wall-item.bh-wall-wide{grid-column:span 2;}
+  .bh-topic-head,.bh-topic-list{padding-left:22px;padding-right:22px;}
+  .bh-contact-box{padding:28px;}
+  .bh-footer-grid{grid-template-columns:1fr;}
+  .bh-header-inner{gap:14px;flex-wrap:wrap;height:auto;padding:12px 0;}
+  .bh-header-tools{margin-left:auto;}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- ============ 吸顶公告 + 页头 ============ -->
+<div class="bh-sticky-wrap">
+  <div class="bh-announce">
+    <div class="bh-announce-inner">
+      <span class="bh-announce-tag">官方发布</span>
+      <ul class="bh-announce-list">
+        <li><b>11·19</b> 冬季手作企划《一间小桌上的四季》正式上线</li>
+        <li><b>11·18</b> 笔盒创作者合作计划开放报名，投稿通道已开启</li>
+        <li><b>11·16</b> 4K 高清片源库完成升级，桌面特写更细腻</li>
+      </ul>
+    </div>
+  </div>
+  <header class="bh-site-header">
+    <div class="bh-header-inner">
+      <a class="bh-logo" href="#bh-top">
+        <svg class="bh-logo-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="笔盒品牌标志">
+          <rect width="64" height="64" rx="14" fill="#ff6b3d"/>
+          <rect x="14" y="22" width="36" height="22" rx="5" fill="#fff3e9"/>
+          <rect x="19" y="27" width="26" height="3" rx="1.5" fill="#ff6b3d"/>
+          <circle cx="24" cy="36" r="3" fill="#ff6b3d"/>
+          <rect x="31" y="34" width="14" height="4" rx="2" fill="#ffb08a"/>
+        </svg>
+        <span>笔盒<small>BIHE VIDEO</small></span>
+      </a>
+      <nav class="bh-nav" id="bhNav" aria-label="主导航">
+        <a href="#bh-top" class="is-active">首页</a>
+        <a href="#bh-focus">焦点视频</a>
+        <a href="#bh-topics">专题企划</a>
+        <a href="#bh-creators">创作者</a>
+        <a href="#bh-updates">品牌动态</a>
+        <a href="#bh-faq">帮助中心</a>
+        <a href="#bh-contact">联系投稿</a>
+      </nav>
+      <div class="bh-header-tools">
+        <div class="bh-search-wrap">
+          <form class="bh-search" id="bhSearchForm" role="search" onsubmit="return false;">
+            <input type="text" id="bhSearchInput" placeholder="搜索手作、测评、桌面美学" aria-label="站内搜索">
+            <button type="submit">搜索</button>
+          </form>
+          <div class="bh-search-feedback" id="bhSearchFeedback" role="status"></div>
+        </div>
+        <button class="bh-burger" id="bhBurger" aria-label="展开导航菜单" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main id="bh-top">
+
+  <!-- ============ 首屏 ============ -->
+  <section class="bh-hero">
+    <div class="bh-container bh-hero-grid">
+      <div class="bh-hero-copy">
+        <span class="bh-eyebrow">笔盒 · 官方网站</span>
+        <h1 class="bh-hero-title">笔盒</h1>
+        <p class="bh-hero-sub">
+          一家以文具、手作与桌面美学为核心的原创视频品牌，用镜头记录真实的书写日常，
+          让每一支笔、每一张纸、每一次动手，都被认真看见。
+        </p>
+        <div class="bh-hero-actions">
+          <a class="bh-btn bh-btn-primary" href="#bh-focus">浏览焦点内容
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <button class="bh-btn bh-btn-ghost" data-bh-modal="submit">成为创作者</button>
+        </div>
+        <dl class="bh-hero-stats">
+          <div><dt>1280+</dt><dd>原创视频作品</dd></div>
+          <div><dt>96 万</dt><dd>社区同好关注</dd></div>
+          <div><dt>7 年</dt><dd>持续运营深耕</dd></div>
+        </dl>
+      </div>
+      <div class="bh-hero-visual">
+        <svg viewBox="0 0 520 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="暖色调书桌场景插画，笔盒、笔记本与咖啡杯">
+          <defs>
+            <linearGradient id="bhSky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#ffe7d8"/><stop offset="1" stop-color="#ffd0b6"/>
+            </linearGradient>
+            <linearGradient id="bhDesk" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#e9a97c"/><stop offset="1" stop-color="#c9804f"/>
+            </linearGradient>
+          </defs>
+          <rect width="520" height="420" rx="24" fill="url(#bhSky)"/>
+          <circle cx="402" cy="96" r="52" fill="#fff1e2" opacity=".85"/>
+          <rect x="0" y="276" width="520" height="144" fill="url(#bhDesk)"/>
+          <rect x="56" y="196" width="210" height="130" rx="10" fill="#fffaf5" stroke="#e7b596" stroke-width="2" transform="rotate(-4 161 261)"/>
+          <g transform="rotate(-4 161 261)">
+            <rect x="74" y="216" width="150" height="4" rx="2" fill="#ffd3bf"/>
+            <rect x="74" y="232" width="170" height="4" rx="2" fill="#ffd3bf"/>
+            <rect x="74" y="248" width="118" height="4" rx="2" fill="#ffd3bf"/>
+            <rect x="74" y="264" width="150" height="4" rx="2" fill="#ffd3bf"/>
+            <circle cx="236" cy="222" r="12" fill="#ff6b3d" opacity=".8"/>
+          </g>
+          <rect x="288" y="238" width="150" height="46" rx="9" fill="#2b2320"/>
+          <rect x="288" y="238" width="150" height="12" rx="6" fill="#4a382f"/>
+          <rect x="306" y="216" width="10" height="26" rx="5" fill="#ffb08a"/>
+          <rect x="330" y="210" width="10" height="32" rx="5" fill="#ff6b3d"/>
+          <rect x="354" y="220" width="10" height="22" rx="5" fill="#7fc7a9"/>
+          <circle cx="452" cy="250" r="30" fill="#fffaf5" stroke="#e7b596" stroke-width="2"/>
+          <circle cx="452" cy="250" r="20" fill="#c9804f" opacity=".7"/>
+          <rect x="394" y="288" width="120" height="10" rx="5" fill="#a76f47" opacity=".55"/>
+          <circle cx="118" cy="146" r="14" fill="#ff6b3d" opacity=".2"/>
+          <circle cx="452" cy="146" r="8" fill="#ff6b3d" opacity=".35"/>
+        </svg>
+        <div class="bh-hero-badge"><i></i>今日 3 条新内容已上线</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 品牌解析 ============ -->
+  <section class="bh-section bh-about" id="bh-about">
+    <div class="bh-container">
+      <div class="bh-section-head">
+        <span class="bh-eyebrow">品牌深度解析</span>
+        <h2 class="bh-h2">笔盒是什么：一个关于书写与双手的影像品牌</h2>
+      </div>
+      <div class="bh-about-grid">
+        <div class="bh-about-text">
+          <p><strong>笔盒</strong>是一个以文具、手作与桌面美学为垂直领域的原创视频品牌官网。我们相信，书写这件事从未过时，它只是换了一种被看见的方式：有人在深夜的台灯下拆开一支新钢笔，有人用三个月时间打磨一张木桌，有人把孩子第一次握笔的样子拍成一支短片。这些细小的、具体的、带着温度的时刻，正是笔盒持续记录的対象。</p>
+          <p>作为一家持续运营七年的内容品牌，笔盒已累计发布超过 1280 支原创视频作品，涵盖深度测评、手作教程、创作者访谈、桌面收纳、城市文具店探访、行业观察等多个方向。我们坚持正版素材、高清画质与专业剪辑标准，所有内容均由官方编辑团队与签约创作者共同完成，力求让每一位观众在有限的时间里，看到值得反复观看的精品内容。</p>
+          <p>笔盒的社区由一群真实的同好组成：学生、设计师、教师、自由职业者、退休后重新拾起画笔的长者。我们在评论区讨论纸的克重与墨水的流动性，也交流如何在一平方米的出租屋里安置一张舒服的书桌。这种具体的交流，构成了笔盒最珍贵的内容生态——不是流量至上，而是信任与陪伴。</p>
+          <p>我们同样关注行业本身。笔盒每年发布《书写工具观察报告》，走访工厂、独立品牌与线下零售空间，记录这个行业真实的变化。我们与多家制笔企业与纸品厂商建立长期合作，为用户带来一手的产品信息与使用体验。对笔盒而言，品牌故事不是包装，而是一群人长期、诚实、细致地做同一件事。</p>
+          <p>如果你也喜欢把笔帽盖回去时那一声轻响，喜欢纸张被翻动的声音，欢迎你留在笔盒。这里没有催促，只有一群愿意慢下来的人，以及他们愿意分享的、真实而温暖的影像。</p>
+        </div>
+        <div class="bh-about-side">
+          <div class="bh-pillar">
+            <div class="bh-pillar-num">01</div>
+            <div>
+              <h3>原创 · 正版</h3>
+              <p>所有影像由官方团队与签约创作者原创拍摄，素材正版授权，拒绝搬运与拼接。</p>
+            </div>
+          </div>
+          <div class="bh-pillar">
+            <div class="bh-pillar-num">02</div>
+            <div>
+              <h3>高清 · 专业</h3>
+              <p>4K 高清片源与专业色彩管理，让纸张纹理、墨水晕染与木作细节清晰可辨。</p>
+            </div>
+          </div>
+          <div class="bh-pillar">
+            <div class="bh-pillar-num">03</div>
+            <div>
+              <h3>社区 · 陪伴</h3>
+              <p>以创作者为核心的内容生态，鼓励真实表达与长期成长，做用户首选的书写社区。</p>
+            </div>
+          </div>
+          <div class="bh-pillar">
+            <div class="bh-pillar-num">04</div>
+            <div>
+              <h3>匠心 · 责任</h3>
+              <p>坚持长期主义与社会责任，通过公益课程与旧文具回收计划回馈社区。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 焦点视频 ============ -->
+  <section class="bh-section" id="bh-focus">
+    <div class="bh-container">
+      <div class="bh-section-head">
+        <span class="bh-eyebrow">焦点视频</span>
+        <h2 class="bh-h2">本周值得花时间看的影像</h2>
+        <p class="bh-section-desc">由官方编辑部精选，兼顾专业深度与观看质感，每一支都值得从头看到尾。</p>
+      </div>
+      <div class="bh-focus-grid">
+        <article class="bh-vcard">
+          <div class="bh-vcover">
+            <svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="深夜书桌上的钢笔与笔记本测评画面">
+              <defs>
+                <linearGradient id="bhF1" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#2b2320"/><stop offset="1" stop-color="#4a382f"/>
+                </linearGradient>
+              </defs>
+              <rect width="640" height="360" fill="url(#bhF1)"/>
+              <circle cx="520" cy="80" r="110" fill="#ff6b3d" opacity=".14"/>
+              <rect x="60" y="200" width="330" height="120" rx="8" fill="#fff5ec" opacity=".94" transform="rotate(-3 225 260)"/>
+              <g transform="rotate(-3 225 260)">
+                <rect x="80" y="222" width="240" height="3" rx="1.5" fill="#e7b596"/>
+                <rect x="80" y="238" width="280" height="3" rx="1.5" fill="#e7b596"/>
+                <rect x="80" y="254" width="200" height="3" rx="1.5" fill="#e7b596"/>
+              </g>
+              <rect x="410" y="120" width="14" height="150" rx="7" fill="#ffb08a" transform="rotate(24 417 195)"/>
+              <path d="M436 108 l22 12 -12 24 -22 -12z" fill="#ff6b3d"/>
+              <circle cx="120" cy="90" r="34" fill="#ff6b3d" opacity=".25"/>
+              <rect x="0" y="300" width="640" height="60" fill="#1d1714"/>
+            </svg>
+            <span class="bh-vtag">深度测评</span>
+            <span class="bh-vduration">18:42</span>
+            <span class="bh-vplay" aria-hidden="true"></span>
+          </div>
+          <div class="bh-vbody">
+            <h3>三支百元钢笔横评：写满 300 页之后，我们留下了哪一支</h3>
+            <p>连续三十天、三百页纸的书写测试，从出墨稳定性、笔尖顺滑度到长期握持疲劳度，给出真实的长期使用结论。</p>
+            <div class="bh-vmeta">
+              <span class="bh-avatar" style="background:#e04e22">苏</span>
+              <span>苏木笔记</span>
+              <span>· 2.4 万次播放</span>
+              <button class="bh-like" data-bh-like aria-label="点赞这支视频">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.6-9.4-8.6C.7 9 2.4 5 6.2 5c2 0 3.5 1.1 4.4 2.4L12 9l1.4-1.6C14.3 6.1 15.8 5 17.8 5c3.8 0 5.5 4 3.6 7.4C19 16.4 12 21 12 21z"/></svg>
+                <span>328</span>
+              </button>
+            </div>
+          </div>
+        </article>
+        <div class="bh-focus-side">
+          <article class="bh-vcard">
+            <div class="bh-vcover">
+              <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="木工手作台面上工具与木料特写">
+                <rect width="400" height="225" fill="#e0c3a5"/>
+                <rect x="0" y="150" width="400" height="75" fill="#b98d63"/>
+                <rect x="46" y="90" width="130" height="20" rx="6" fill="#8a6240"/>
+                <rect x="66" y="62" width="18" height="70" rx="6" fill="#5f4229" transform="rotate(18 75 97)"/>
+                <circle cx="300" cy="110" r="44" fill="#f2e3d2"/>
+                <circle cx="300" cy="110" r="26" fill="#cab094"/>
+                <rect x="240" y="160" width="120" height="8" rx="4" fill="#8a6240"/>
+                <circle cx="352" cy="52" r="20" fill="#ff6b3d" opacity=".4"/>
+              </svg>
+              <span class="bh-vtag">手作教程</span>
+              <span class="bh-vduration">12:05</span>
+              <span class="bh-vplay" aria-hidden="true"></span>
+            </div>
+            <div class="bh-vbody">
+              <h3>从一块边角料开始：做一只放笔的小木盒</h3>
+              <p>零基础也能上手的木作入门，附完整尺寸图与打磨顺序。</p>
+              <div class="bh-vmeta">
+                <span class="bh-avatar" style="background:#7fc7a9">林</span>
+                <span>林间工坊</span>
+                <span>· 1.1 万</span>
+                <button class="bh-like" data-bh-like aria-label="点赞这支视频">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.6-9.4-8.6C.7 9 2.4 5 6.2 5c2 0 3.5 1.1 4.4 2.4L12 9l1.4-1.6C14.3 6.1 15.8 5 17.8 5c3.8 0 5.5 4 3.6 7.4C19 16.4 12 21 12 21z"/></svg>
+                  <span>204</span>
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="bh-vcard">
+            <div class="bh-vcover">
+              <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="城市文具店货架与暖色灯光的探访画面">
+                <rect width="400" height="225" fill="#ffd9c6"/>
+                <rect x="0" y="140" width="400" height="85" fill="#c9804f"/>
+                <rect x="30" y="60" width="110" height="80" rx="6" fill="#fff5ec"/>
+                <rect x="44" y="74" width="82" height="8" rx="4" fill="#ff6b3d"/>
+                <rect x="44" y="92" width="60" height="8" rx="4" fill="#ffb08a"/>
+                <rect x="170" y="46" width="90" height="94" rx="6" fill="#fff5ec"/>
+                <rect x="184" y="62" width="62" height="60" rx="4" fill="#7fc7a9" opacity=".6"/>
+                <rect x="290" y="72" width="74" height="68" rx="6" fill="#fff5ec"/>
+                <circle cx="327" cy="106" r="18" fill="#ff6b3d" opacity=".7"/>
+                <circle cx="360" cy="40" r="26" fill="#fff1e2"/>
+              </svg>
+              <span class="bh-vtag">城市探索</span>
+              <span class="bh-vduration">09:38</span>
+              <span class="bh-vplay" aria-hidden="true"></span>
+            </div>
+            <div class="bh-vbody">
+              <h3>藏在老巷二楼的文具店，老板守了二十三年</h3>
+              <p>一家不卖爆款、只卖自己用过的东西的小店，与它的主人。</p>
+              <div class="bh-vmeta">
+                <span class="bh-avatar" style="background:#8b7bd8">周</span>
+                <span>周游街角</span>
+                <span>· 8600</span>
+                <button class="bh-like" data-bh-like aria-label="点赞这支视频">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.6-9.4-8.6C.7 9 2.4 5 6.2 5c2 0 3.5 1.1 4.4 2.4L12 9l1.4-1.6C14.3 6.1 15.8 5 17.8 5c3.8 0 5.5 4 3.6 7.4C19 16.4 12 21 12 21z"/></svg>
+                  <span>176</span>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 热门视频流 ============ -->
+  <section class="bh-section" style="background:#fff;border-top:1px solid var(--bh-line);border-bottom:1px solid var(--bh-line);" id="bh-stream">
+    <div class="bh-container">
+      <div class="bh-section-head">
+        <span class="bh-eyebrow">热门内容</span>
+        <h2 class="bh-h2">社区正在讨论的书写日常</h2>
+        <p class="bh-section-desc">来自笔盒创作者的真实记录，从一杯咖啡的时间开始，聊聊手边的工具与心情。</p>
+      </div>
+      <div class="bh-stream-grid" id="bhStreamGrid">
+
+        <article class="bh-vcard" data-bh-tag="教程">
+          <div class="bh-vcover">
+            <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="手帐拼贴排版教程画面">
+              <rect width="400" height="225" fill="#f4e7dc"/>
+              <rect x="36" y="30" width="160" height="165" rx="6" fill="#fffaf5" stroke="#e7b596"/>
+              <rect x="52" y="48" width="128" height="42" rx="4" fill="#ffd3bf"/>
+              <rect x="52" y="102" width="90" height="6" rx="3" fill="#e7b596"/>
+              <rect x="52" y="118" width="110" height="6" rx="3" fill="#e7b596"/>
+              <rect x="52" y="140" width="70" height="30" rx="4" fill="#7fc7a9" opacity=".6"/>
+              <circle cx="300" cy="110" r="56" fill="#ff6b3d" opacity=".16"/>
+              <path d="M270 130 l40 -50 20 30 -32 34z" fill="#ff6b3d" opacity=".55"/>
+            </svg>
+            <span class="bh-vtag">教程</span>
+            <span class="bh-vduration">07:21</span>
+          </div>
+          <div class="bh-vbody">
+            <h3>一周手帐排版：不用贴纸也能做出层次的三个方法</h3>
+            <p>用留白、字号对比与线条分区，做出干净又耐看的页面。</p>
+            <div class="bh-vmeta">
+              <span class="bh-avatar" style="background:#e04e22">阿</span>
+              <span>阿栗手帐</span>
+              <button class="bh-like" data-bh-like aria-label="点赞这条视频">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.6-9.4-8.6C.7 9 2.4 5 6.2 5c2 0 3.5 1.1 4.4 2.4L12 9l1.4-1.6C14.3 6.1 15.8 5 17.8 5c3.8 0 5.5 4 3.6 7.4C19 16.4 12 21 12 21z"/></svg>
+                <span>512</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="bh-vcard" data-bh-tag="访谈">
+          <div class="bh-vcover">
+            <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="制笔匠人访谈现场画面">
+              <rect width="400" height="225" fill="#3a2f2a"/>
+              <circle cx="140" cy="110" r="52" fill="#ffb08a" opacity=".85"/>
+              <circle cx="140" cy="96" r="22" fill="#3a2f2a"/>
+              <path d="M104 150 q36 -30 72 0z" fill="#3a2f2a"/>
+              <rect x="240" y="70" width="120" height="86" rx="6" fill="#5c4a41"/>
+              <rect x="254" y="84" width="92" height="6" rx="3" fill="#ffb08a"/>
+              <rect x="254" y="100" width="70" height="6" rx="3" fill="#ffb08a" opacity=".6"/>
+              <circle cx="330" cy="40" r="16" fill="#ff6b3d" opacity=".5"/>
+            </svg>
+            <span class="bh-vtag">人物访谈</span>
+            <span class="bh-vduration">21:16</span>
+          </div>
+          <div class="bh-vbody">
+            <h3>做了三十年笔尖的老师傅，谈什么是“刚刚好的顺滑”</h3>
+            <p>从学徒到车间主管，一个手艺人眼中的工具与时间。</p>
+            <div class="bh-vmeta">
+              <span class="bh-avatar" style="background:#8b7bd8">纪</span>
+              <span>纪事频道</span>
+              <button class="bh-like" data-bh-like aria-label="点赞这条视频">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.6-9.4-8.6C.7 9 2.4 5 6.2 5c2 0 3.5 1.1 4.4 2.4L12 9l1.4-1.6C14.3 6.1 15.8 5 17.8 5c3.8 0 5.5 4 3.6 7.4C19 16.4 12 21 12 21z"/></svg>
+                <span>389</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="bh-vcard" data-bh-tag="收纳">
+          <div class="bh-vcover">
+            <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="小户型桌面收纳整理画面">
+              <rect width="400" height="225" fill="#fff1e2"/>
+              <rect x="40" y="130" width="320" height="16" rx="4" fill="#c9804f"/>
+              <rect x="62" y="66" width="54" height="62" rx="5" fill="#ff6b3d" opacity=".8"/>
+              <rect x="128" y="80" width="54" height="48" rx="5" fill="#7fc7a9"/>
+              <rect x="194" y="56" width="54" height="72" rx="5" fill="#ffb08a"/>
+              <rect x="260" y="88" width="54" height="40" rx="5" fill="#8b7bd8" opacity=".7"/>
+              <rect x="60" y="150" width="280" height="8" rx="4" fill="#e7b596"/>
+              <circle cx="352" cy="60" r="24" fill="#ffd3bf"/>
+            </svg>
+            <span class="bh-vtag">收纳</span>
+            <span class="bh-vduration">06:44</span>
+          </div>
+          <div class="bh-vbody">
+            <h3>1.2 米书桌的极限收纳：把常用工具放在伸手可及处</h3>
+            <p>三步建立属于自己的桌面动线，告别找不到笔的早晨。</p>
+            <div class="bh-vmeta">
+              <span class="bh-avatar" style="background:#7fc7a9">默</span>
+              <span>默存空间</span>
+              <button class="bh-like" data-bh-like aria-label="点赞这条视频">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.6-9.4-8.6C.7 9 2.4 5 6.2 5c2 0 3.5 1.1 4.4 2.4L12 9l1.4-1.6C14.3 6.1 15.8 5 17.8 5c3.8 0 5.5 4 3.6 7.4C19 16.4 12 21 12 21z"/></svg>
+                <span>447</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="bh-vcard" data-bh-tag="科普">
+          <div class="bh-vcover">
+            <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="纸张克重科普演示画面">
+              <rect width="400" height="225" fill="#eef4f1"/>
+              <rect x="60" y="50" width="120" height="130" rx="4" fill="#fff" stroke="#b9d3c7"/>
+              <rect x="76" y="66" width="88" height="6" rx="3" fill="#7fc7a9"/>
+              <rect x="76" y="84" width="60" height="6" rx="3" fill="#7fc7a9" opacity=".6"/>
+              <rect x="220" y="70" width="120" height="110" rx="4" fill="#fff" stroke="#b9d3c7" transform="rotate(6 280 125)"/>
+              <rect x="238" y="92" width="80" height="6" rx="3" fill="#38b26d" transform="rotate(6 280 125)"/>
+              <circle cx="340" cy="46" r="22" fill="#7fc7a9" opacity=".5"/>
+            </svg>
+            <span class="bh-vtag">知识科普</span>
+            <span class="bh-vduration">10:02</span>
+          </div>
+          <div class="bh-vbody">
+            <h3>80g、100g、120g：纸的克重到底影响什么</h3>
+            <p>渗透、透写、手感，用六个小实验把纸张参数讲明白。</p>
+            <div class="bh-vmeta">
+              <span class="bh-avatar" style="background:#38b26d">纸</span>
+              <span>纸上研究所</span>
+              <button class="bh-like" data-bh-like aria-label="点赞这条视频">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.6-9.4-8.6C.7 9 2.4 5 6.2 5c2 0 3.5 1.1 4.4 2.4L12 9l1.4-1.6C14.3 6.1 15.8 5 17.8 5c3.8 0 5.5 4 3.6 7.4C19 16.4 12 21 12 21z"/></svg>
+                <span>601</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="bh-vcard" data-bh-tag="日常">
+          <div class="bh-vcover">
+            <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="清晨书桌与咖啡杯的日常记录画面">
+              <rect width="400" height="225" fill="#ffe7d8"/>
+              <circle cx="320" cy="60" r="40" fill="#fff1e2"/>
+              <rect x="0" y="150" width="400" height="75" fill="#c9804f"/>
+              <rect x="60" y="110" width="150" height="44" rx="6" fill="#fffaf5"/>
+              <rect x="74" y="124" width="120" height="4" rx="2" fill="#e7b596"/>
+              <rect x="74" y="136" width="90" height="4" rx="2" fill="#e7b596"/>
+              <circle cx="290" cy="132" r="26" fill="#fffaf5"/>
+              <circle cx="290" cy="132" r="16" fill="#a76f47"/>
+              <path d="M258 130 q-16 10 0 20" stroke="#e7b596" stroke-width="5" fill="none"/>
+            </svg>
+            <span class="bh-vtag">日常记录</span>
+            <span class="bh-vduration">04:50</span>
+          </div>
+          <div class="bh-vbody">
+            <h3>六点半的写字时间：一个上班族的清晨四十五分钟</h3>
+            <p>不谈效率，只记录光线怎么一点点爬过桌面。</p>
+            <div class="bh-vmeta">
+              <span class="bh-avatar" style="background:#e0a13a">晨</span>
+              <span>清晨五分钟</span>
+              <button class="bh-like" data-bh-like aria-label="点赞这条视频">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.6-9.4-8.6C.7 9 2.4 5 6.2 5c2 0 3.5 1.1 4.4 2.4L12 9l1.4-1.6C14.3 6.1 15.8 5 17.8 5c3.8 0 5.5 4 3.6 7.4C19 16.4 12 21 12 21z"/></svg>
+                <span>298</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="bh-vcard" data-bh-tag="亲子">
+          <div class="bh-vcover">
+            <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="亲子共写场景画面">
+              <rect width="400" height="225" fill="#fff4ea"/>
+              <rect x="0" y="160" width="400" height="65" fill="#e9a97c"/>
+              <circle cx="140" cy="98" r="34" fill="#ffb08a"/>
+              <rect x="112" y="128" width="56" height="36" rx="10" fill="#ff6b3d" opacity=".75"/>
+              <circle cx="240" cy="112" r="24" fill="#7fc7a9"/>
+              <rect x="218" y="132" width="44" height="28" rx="8" fill="#38b26d" opacity=".7"/>
+              <rect x="180" y="150" width="70" height="8" rx="4" fill="#fffaf5"/>
+              <circle cx="330" cy="50" r="20" fill="#ffd3bf"/>
+            </svg>
+            <span class="bh-vtag">亲子成长</span>
+            <span class="bh-vduration">08:12</span>
+          </div>
+          <div class="bh-vbody">
+            <h3>孩子第一次写自己的名字，我把它拍了下来</h3>
+            <p>歪歪扭扭的三个字，是她送给这个世界的第一个签名。</p>
+            <div class="bh-vmeta">
+              <span class="bh-avatar" style="background:#ff6b3d">南</span>
+              <span>南风记事</span>
+              <button class="bh-like" data-bh-like aria-label="点赞这条视频">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.6-9.4-8.6C.7 9 2.4 5 6.2 5c2 0 3.5 1.1 4.4 2.4L12 9l1.4-1.6C14.3 6.1 15.8 5 17.8 5c3.8 0 5.5 4 3.6 7.4C19 16.4 12 21 12 21z"/></svg>
+                <span>733</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+      <div style="text-align:center;margin-top:38px;">
+        <button class="bh-btn bh-btn-ghost" data-bh-modal="share">分享本期内容清单</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 专题企划 ============ -->
+  <section class="bh-section" id="bh-topics">
+    <div class="bh-container">
+      <div class="bh-topic">
+        <div class="bh-topic-head">
+          <div>
+            <span class="bh-eyebrow">专题企划</span>
+            <h2 class="bh-h2" style="color:#fff;">笔盒长期企划：正在进行的三个影像计划</h2>
+            <p class="bh-section-desc">由官方发起、创作者共同参与的深度内容工程，长期更新，欢迎报名加入。</p>
+          </div>
+          <a class="bh-btn bh-btn-primary" href="#bh-contact">报名参与</a>
+        </div>
+        <div class="bh-topic-list">
+          <article class="bh-topic-item">
+            <div class="bh-topic-idx">PLAN 01</div>
+            <h3>一间小桌上的四季</h3>
+            <p>跟随十二位创作者，用一年的时间拍摄同一张书桌在四季里的变化，记录人在桌前的生活。</p>
+            <span class="bh-topic-status">更新至 11 / 12 期</span>
+          </article>
+          <article class="bh-topic-item">
+            <div class="bh-topic-idx">PLAN 02</div>
+            <h3>造笔的人</h3>
+            <p>走访国内制笔工厂与独立设计品牌，从材料、模具到装配，呈现一支笔的完整旅程。</p>
+            <span class="bh-topic-status">第一季已完成 · 共 6 集</span>
+          </article>
+          <article class="bh-topic-item">
+            <div class="bh-topic-idx">PLAN 03</div>
+            <h3>写字的人</h3>
+            <p>不拍手，只拍人。采访不同职业、不同年龄的书写者，聊他们为什么还在用纸和笔。</p>
+            <span class="bh-topic-status">每周三更新</span>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 创作者矩阵 ============ -->
+  <section class="bh-section" id="bh-creators">
+    <div class="bh-container">
+      <div class="bh-section-head">
+        <span class="bh-eyebrow">创作者矩阵</span>
+        <h2 class="bh-h2">笔盒背后认真做事的人</h2>
+        <p class="bh-section-desc">他们是手艺人、设计师、教师、普通上班族，也是把日常拍成作品的人。</p>
+      </div>
+      <div class="bh-creator-grid">
+        <article class="bh-creator-card">
+          <div class="bh-creator-ava" style="background:#e04e22">苏</div>
+          <h3>苏木笔记</h3>
+          <div class="bh-skill">深度测评 · 钢笔</div>
+          <p>前纸媒编辑，写了十二年钢笔测评，坚持所有结论来自长期使用。</p>
+          <div class="bh-cstat"><span><b>86</b>作品</span><span><b>12.4万</b>关注</span></div>
+        </article>
+        <article class="bh-creator-card">
+          <div class="bh-creator-ava" style="background:#7fc7a9">林</div>
+          <h3>林间工坊</h3>
+          <div class="bh-skill">手作教程 · 木作</div>
+          <p>木工工作室主理人，主张用手边材料做实用小物，教程从不藏步骤。</p>
+          <div class="bh-cstat"><span><b>63</b>作品</span><span><b>8.9万</b>关注</span></div>
+        </article>
+        <article class="bh-creator-card">
+          <div class="bh-creator-ava" style="background:#8b7bd8">周</div>
+          <h3>周游街角</h3>
+          <div class="bh-skill">城市探索 · 在地文化</div>
+          <p>用镜头寻找城市里安静的小店，相信每一条老巷都有自己的故事。</p>
+          <div class="bh-cstat"><span><b>47</b>作品</span><span><b>6.2万</b>关注</span></div>
+        </article>
+        <article class="bh-creator-card">
+          <div class="bh-creator-ava" style="background:#38b26d">纸</div>
+          <h3>纸上研究所</h3>
+          <div class="bh-skill">知识科普 · 纸张</div>
+          <p>材料学背景，把专业的纸张参数讲得像聊天，是很多人的入门老师。</p>
+          <div class="bh-cstat"><span><b>39</b>作品</span><span><b>9.7万</b>关注</span></div>
+        </article>
+      </div>
+      <div style="text-align:center;margin-top:34px;">
+        <button class="bh-btn bh-btn-primary" data-bh-modal="submit">申请成为签约创作者</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 随笔 + 影像墙 ============ -->
+  <section class="bh-section" style="background:#fff;border-top:1px solid var(--bh-line);border-bottom:1px solid var(--bh-line);" id="bh-notes">
+    <div class="bh-container">
+      <div class="bh-section-head">
+        <span class="bh-eyebrow">编辑随笔</span>
+        <h2 class="bh-h2">视频之外，还想说几句</h2>
+      </div>
+      <div class="bh-notes-grid">
+        <article class="bh-note">
+          <div class="bh-note-date">2026 / 11 / 17</div>
+          <h3>为什么我们坚持拍“不好看”的真实桌面</h3>
+          <p>有线缆、有灰尘、有喝了一半凉掉的茶。我们不想把书写生活拍成样板间，因为真实才值得被记录，也更容易让人想起自己的那张桌子。</p>
+          <a class="bh-more" href="#bh-contact">继续阅读 →</a>
+        </article>
+        <article class="bh-note">
+          <div class="bh-note-date">2026 / 11 / 12</div>
+          <h3>一次失败的拍摄：我们把墨水打翻在稿子上</h3>
+          <p>原计划拍一支整洁的书写演示，结果整杯墨水洒在写了三小时的稿纸上。后来我们决定保留那段素材，因为意外也是书写的一部分。</p>
+          <a class="bh-more" href="#bh-contact">继续阅读 →</a>
+        </article>
+        <article class="bh-note">
+          <div class="bh-note-date">2026 / 11 / 05</div>
+          <h3>关于“笔盒”这个名字的一点说明</h3>
+          <p>它不是某个具体产品，而是每个人手边那个装笔的盒子——装着工具，也装着一部分自己。我们希望这个品牌像一只笔盒，安静、耐用、随时打开。</p>
+          <a class="bh-more" href="#bh-contact">继续阅读 →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bh-section" id="bh-wall">
+    <div class="bh-container">
+      <div class="bh-section-head">
+        <span class="bh-eyebrow">影像墙</span>
+        <h2 class="bh-h2">社区投稿作品精选</h2>
+        <p class="bh-section-desc">来自笔盒社区的真实图片，由官方编辑从每周投稿中挑选，记录手边正在发生的书写。</p>
+      </div>
+      <div class="bh-wall-grid">
+        <div class="bh-wall-item bh-wall-lg">
+          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="摆满文具的书桌全景照片">
+            <rect width="400" height="300" fill="#ffe7d8"/>
+            <rect x="0" y="200" width="400" height="100" fill="#c9804f"/>
+            <rect x="40" y="120" width="140" height="80" rx="6" fill="#fffaf5"/>
+            <rect x="200" y="90" width="70" height="110" rx="6" fill="#ffb08a"/>
+            <rect x="286" y="130" width="70" height="70" rx="6" fill="#7fc7a9"/>
+            <circle cx="330" cy="60" r="34" fill="#ffd3bf"/>
+          </svg>
+          <span>周末整理书桌 · @南风记事</span>
+        </div>
+        <div class="bh-wall-item bh-wall-wide">
+          <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="翻开的笔记本与钢笔细节照片">
+            <rect width="400" height="200" fill="#f4e7dc"/>
+            <rect x="60" y="40" width="280" height="130" rx="6" fill="#fffaf5"/>
+            <rect x="196" y="40" width="8" height="130" fill="#e7b596"/>
+            <rect x="84" y="66" width="94" height="5" rx="2.5" fill="#e7b596"/>
+            <rect x="84" y="84" width="70" height="5" rx="2.5" fill="#e7b596"/>
+            <rect x="216" y="66" width="100" height="5" rx="2.5" fill="#ff6b3d" opacity=".7"/>
+            <circle cx="340" cy="44" r="18" fill="#ffb08a"/>
+          </svg>
+          <span>墨水试用记录 · @阿栗手帐</span>
+        </div>
+        <div class="bh-wall-item">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="彩色铅笔整齐排列特写照片">
+            <rect width="200" height="200" fill="#fff1e2"/>
+            <rect x="34" y="40" width="16" height="120" rx="6" fill="#ff6b3d"/>
+            <rect x="66" y="52" width="16" height="108" rx="6" fill="#7fc7a9"/>
+            <rect x="98" y="34" width="16" height="126" rx="6" fill="#8b7bd8"/>
+            <rect x="130" y="48" width="16" height="112" rx="6" fill="#e0a13a"/>
+          </svg>
+          <span>冬季配色 · @林间工坊</span>
+        </div>
+        <div class="bh-wall-item">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="窗边书写剪影照片">
+            <rect width="200" height="200" fill="#dce9f2"/>
+            <rect x="24" y="24" width="152" height="110" rx="6" fill="#fffaf5"/>
+            <rect x="92" y="24" width="8" height="110" fill="#b9d3c7"/>
+            <circle cx="140" cy="70" r="24" fill="#ffd3bf"/>
+            <rect x="0" y="150" width="200" height="50" fill="#c9804f"/>
+          </svg>
+          <span>午后光线 · @清晨五分钟</span>
+        </div>
+        <div class="bh-wall-item">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="手作木盒成品照片">
+            <rect width="200" height="200" fill="#e0c3a5"/>
+            <rect x="40" y="80" width="120" height="70" rx="8" fill="#a76f47"/>
+            <rect x="40" y="72" width="120" height="18" rx="8" fill="#8a6240"/>
+            <circle cx="100" cy="118" r="12" fill="#f2e3d2"/>
+          </svg>
+          <span>第一只木盒 · @默存空间</span>
+        </div>
+        <div class="bh-wall-item bh-wall-wide">
+          <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="老巷文具店门头照片">
+            <rect width="400" height="200" fill="#ffd9c6"/>
+            <rect x="0" y="130" width="400" height="70" fill="#a76f47"/>
+            <rect x="90" y="40" width="220" height="96" rx="4" fill="#fffaf5"/>
+            <rect x="120" y="64" width="160" height="10" rx="5" fill="#ff6b3d"/>
+            <rect x="120" y="86" width="110" height="8" rx="4" fill="#e7b596"/>
+            <circle cx="320" cy="46" r="18" fill="#ffb08a"/>
+          </svg>
+          <span>巷子里的店 · @周游街角</span>
+        </div>
+        <div class="bh-wall-item">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="纸张样品排列特写照片">
+            <rect width="200" height="200" fill="#eef4f1"/>
+            <rect x="30" y="40" width="140" height="120" rx="4" fill="#fff" stroke="#b9d3c7"/>
+            <rect x="46" y="58" width="108" height="5" rx="2.5" fill="#7fc7a9"/>
+            <rect x="46" y="76" width="84" height="5" rx="2.5" fill="#7fc7a9" opacity=".7"/>
+            <rect x="46" y="94" width="100" height="5" rx="2.5" fill="#7fc7a9" opacity=".5"/>
+          </svg>
+          <span>纸样对比 · @纸上研究所</span>
+        </div>
+        <div class="bh-wall-item">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="儿童涂鸦作品照片">
+            <rect width="200" height="200" fill="#fff4ea"/>
+            <circle cx="80" cy="90" r="34" fill="#ffb08a" opacity=".8"/>
+            <circle cx="130" cy="120" r="26" fill="#7fc7a9" opacity=".8"/>
+            <path d="M40 160 q60 -40 120 0" stroke="#ff6b3d" stroke-width="6" fill="none"/>
+            <circle cx="160" cy="60" r="14" fill="#8b7bd8" opacity=".6"/>
+          </svg>
+          <span>第一次涂鸦 · @南风记事</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 动态 + FAQ ============ -->
+  <section class="bh-section" style="background:#fff;border-top:1px solid var(--bh-line);" id="bh-updates">
+    <div class="bh-container bh-split">
+      <div>
+        <div class="bh-section-head">
+          <span class="bh-eyebrow">企业动态</span>
+          <h2 class="bh-h2">笔盒正在发生的事</h2>
+        </div>
+        <ul class="bh-update-list">
+          <li>
+            <time>11 / 19</time>
+            <div>
+              <h3>冬季手作企划上线，同步开放作品征集</h3>
+              <p>《一间小桌上的四季》冬季篇正式发布，同期开启用户作品征集，优秀作品将获得官方推荐位与创作支持。</p>
+            </div>
+          </li>
+          <li>
+            <time>11 / 14</time>
+            <div>
+              <h3>创作者合作计划 2026 年度报名启动</h3>
+              <p>面向文具、手作、桌面美学方向的创作者开放报名，提供拍摄设备支持、选题共建与内容分发资源。</p>
+            </div>
+          </li>
+          <li>
+            <time>11 / 08</time>
+            <div>
+              <h3>高清片源库完成升级</h3>
+              <p>站内主要视频已更新为更高码率片源，纸张纤维、墨水晕染与木作纹理的呈现更加清晰。</p>
+            </div>
+          </li>
+          <li>
+            <time>10 / 30</time>
+            <div>
+              <h3>旧文具回收计划第三季收官</h3>
+              <p>本季共回收并翻新文具 4200 余件，已全部捐赠至乡村学校的书写课堂项目。</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="bh-faq" id="bh-faq">
+        <div class="bh-section-head">
+          <span class="bh-eyebrow">帮助中心</span>
+          <h2 class="bh-h2">常见问题</h2>
+        </div>
+        <details open>
+          <summary>笔盒的内容多久更新一次？</summary>
+          <p>官方精编内容每周更新 2 至 3 次，社区创作者投稿每日持续更新。专题企划按各自节奏长期更新，具体进度可在专题区域查看。</p>
+        </details>
+        <details>
+          <summary>我没有专业设备，可以投稿吗？</summary>
+          <p>当然可以。笔盒更看重内容本身的真实与具体，手机拍摄的日常记录同样欢迎。投稿时可附上文字说明，编辑会给出改进建议。</p>
+        </details>
+        <details>
+          <summary>如何成为签约创作者？</summary>
+          <p>点击页面中的“申请成为签约创作者”填写表单，我们会在七个工作日内联系你，了解你的创作方向与更新计划。</p>
+        </details>
+        <details>
+          <summary>站内内容可以转载吗？</summary>
+          <p>笔盒所有原创内容版权归品牌与创作者共同所有，转载请联系官方授权。我们鼓励分享链接，但请勿搬运或二次剪辑。</p>
+        </details>
+        <details>
+          <summary>可以申请拍摄合作或品牌联名吗？</summary>
+          <p>可以。请在联系表单中说明合作类型、产品信息与期望档期，商务团队会与你沟通具体方案与排期。</p>
+        </details>
+        <details>
+          <summary>投稿作品会获得什么支持？</summary>
+          <p>入选作品将获得官方推荐位展示、流量扶持与专业剪辑建议；表现突出的创作者有机会加入签约计划并获得长期创作支持。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 用户评价 ============ -->
+  <section class="bh-section" id="bh-reviews">
+    <div class="bh-container">
+      <div class="bh-section-head">
+        <span class="bh-eyebrow">用户口碑</span>
+        <h2 class="bh-h2">来自社区的真实声音</h2>
+        <p class="bh-section-desc">他们因为一支笔、一张纸或一支视频来到这里，然后留了下来。</p>
+      </div>
+      <div class="bh-review-grid">
+        <div class="bh-review">
+          <div class="bh-review-head">
+            <span class="bh-avatar" style="background:#e04e22">陈</span>
+            <div><b>陈默</b><span>关注 2 年</span></div>
+          </div>
+          <div class="bh-review-stars">★★★★★</div>
+          看苏木的钢笔测评三年了，最大的感受是“不急”。他不追新品，只用长期使用的结果说话，这种态度在现在很难得。
+        </div>
+        <div class="bh-review">
+          <div class="bh-review-head">
+            <span class="bh-avatar" style="background:#7fc7a9">李</span>
+            <div><b>李小鱼</b><span>关注 8 个月</span></div>
+          </div>
+          <div class="bh-review-stars">★★★★★</div>
+          跟着林间工坊的教程做了第一个木盒，虽然很粗糙，但真的完成了。教程里连打磨顺序都写清楚，对新手很友好。
+        </div>
+        <div class="bh-review">
+          <div class="bh-review-head">
+            <span class="bh-avatar" style="background:#8b7bd8">王</span>
+            <div><b>王一一</b><span>关注 1 年半</span></div>
+          </div>
+          <div class="bh-review-stars">★★★★☆</div>
+          城市的片子拍得很有味道，看完会想出门走走。希望多更新一些南方小城的内容，期待。
+        </div>
+        <div class="bh-review">
+          <div class="bh-review-head">
+            <span class="bh-avatar" style="background:#38b26d">赵</span>
+            <div><b>赵老师</b><span>关注 3 年</span></div>
+          </div>
+          <div class="bh-review-stars">★★★★★</div>
+          我把纸上研究所的纸张科普视频放给班上的学生看，讲得比教材生动多了，孩子们第一次知道纸还有这么多讲究。
+        </div>
+        <div class="bh-review">
+          <div class="bh-review-head">
+            <span class="bh-avatar" style="background:#e0a13a">周</span>
+            <div><b>周末不加班</b><span>关注 6 个月</span></div>
+          </div>
+          <div class="bh-review-stars">★★★★★</div>
+          每天早上六点半的那支短片，成了我起床之后的固定节目。没有鸡血，就是安安静静地看着别人写字，很治愈。
+        </div>
+        <div class="bh-review">
+          <div class="bh-review-head">
+            <span class="bh-avatar" style="background:#ff6b3d">吴</span>
+            <div><b>吴桐</b><span>关注 2 年半</span></div>
+          </div>
+          <div class="bh-review-stars">★★★★☆</div>
+          内容质量整体很稳定，评论区氛围也好，大家真的在讨论笔和纸，而不是互相抬杠。这点特别加分。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 合作品牌 & 联系 ============ -->
+  <section class="bh-section" id="bh-contact">
+    <div class="bh-container">
+      <div class="bh-section-head">
+        <span class="bh-eyebrow">合作与联系</span>
+        <h2 class="bh-h2">和笔盒一起，把书写这件事讲得更远</h2>
+        <p class="bh-section-desc">无论你是品牌方、内容机构还是独立创作者，都欢迎与我们建立长期合作。</p>
+      </div>
+      <div class="bh-partners" style="margin-bottom:34px;">
+        <span class="bh-partner">青川制笔</span>
+        <span class="bh-partner">纸间纸品</span>
+        <span class="bh-partner">木言家居</span>
+        <span class="bh-partner">拾光文具</span>
+        <span class="bh-partner">方格设计</span>
+      </div>
+      <div class="bh-contact-box">
+        <div>
+          <h2>有故事想被拍下来吗？</h2>
+          <p>笔盒长期接受内容投稿、拍摄合作与品牌联名。把你的想法写给我们，哪怕只有一句话，编辑团队都会认真阅读并回复。</p>
+          <div class="bh-contact-tags">
+            <span>投稿邮箱：hello@bihe-video.cn</span>
+            <span>合作微信：bihe-video</span>
+            <span>工作时间：周一至周五 10:00 - 18:00</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <button class="bh-btn bh-btn-primary" data-bh-modal="submit">在线投稿</button>
+          <button class="bh-btn bh-btn-ghost" data-bh-modal="share">分享给朋友</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ 页脚 ============ -->
+<footer class="bh-footer">
+  <div class="bh-container">
+    <div class="bh-footer-grid">
+      <div>
+        <div class="bh-footer-logo">
+          <svg width="30" height="30" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="笔盒页脚标志">
+            <rect width="64" height="64" rx="14" fill="#ff6b3d"/>
+            <rect x="14" y="22" width="36" height="22" rx="5" fill="#fff3e9"/>
+            <rect x="19" y="27" width="26" height="3" rx="1.5" fill="#ff6b3d"/>
+          </svg>
+          笔盒
+        </div>
+        <p>笔盒（BIHE VIDEO）官方网站，专注文具、手作与桌面美学的原创视频品牌。以真实记录与专业表达，持续构建值得信赖的内容生态。</p>
+      </div>
+      <div>
+        <h3>内容导航</h3>
+        <ul class="bh-footer-links">
+          <li><a href="#bh-focus">焦点视频</a></li>
+          <li><a href="#bh-stream">热门内容</a></li>
+          <li><a href="#bh-topics">专题企划</a></li>
+          <li><a href="#bh-wall">影像墙</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>关于品牌</h3>
+        <ul class="bh-footer-links">
+          <li><a href="#bh-about">品牌故事</a></li>
+          <li><a href="#bh-creators">创作者矩阵</a></li>
+          <li><a href="#bh-updates">企业动态</a></li>
+          <li><a href="#bh-faq">帮助中心</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>联系方式</h3>
+        <ul class="bh-footer-links">
+          <li>商务合作：biz@bihe-video.cn</li>
+          <li>内容投稿：hello@bihe-video.cn</li>
+          <li>社区支持：support@bihe-video.cn</li>
+          <li>办公地址：华东创意园 B 座 5 层</li>
+        </ul>
+      </div>
+    </div>
+    <div class="bh-footer-bottom">
+      <span>© 2026 笔盒 BIHE VIDEO 官方网站 · 版权所有 · 持续运营中</span>
+      <span>原创内容受版权保护 · 正版高清 · 值得信赖</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ 弹窗 ============ -->
+<div class="bh-modal-mask" id="bhModalMask">
+  <div class="bh-modal bh-modal-rel" role="dialog" aria-modal="true" aria-labelledby="bhModalTitle">
+    <button class="bh-modal-close" id="bhModalClose" aria-label="关闭弹窗">×</button>
+    <div id="bhModalBody"></div>
+  </div>
+</div>
+
+<div class="bh-toast" id="bhToast" role="status"></div>
+<button class="bh-backtop" id="bhBackTop" aria-label="回到顶部">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- 移动端导航 ---------- */
+  var burger = document.getElementById('bhBurger');
+  var nav = document.getElementById('bhNav');
+  if(burger && nav){
+    burger.addEventListener('click', function(){
+      var open = nav.classList.toggle('is-open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){
+        nav.classList.remove('is-open');
+        burger.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  /* ---------- 导航高亮 ---------- */
+  var navLinks = nav ? Array.prototype.slice.call(nav.querySelectorAll('a')) : [];
+  var sections = navLinks.map(function(a){
+    var id = a.getAttribute('href');
+    return id && id.charAt(0) === '#' ? document.querySelector(id) : null;
+  });
+  function syncNav(){
+    var pos = window.scrollY + 160;
+    var active = 0;
+    sections.forEach(function(sec, i){
+      if(sec && sec.offsetTop <= pos) active = i;
+    });
+    navLinks.forEach(function(a, i){
+      a.classList.toggle('is-active', i === active);
+    });
+  }
+
+  /* ---------- Toast ---------- */
+  var toast = document.getElementById('bhToast');
+  var toastTimer = null;
+  function showToast(msg){
+    if(!toast) return;
+    toast.textContent = msg;
+    toast.classList.add('is-show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){
+      toast.classList.remove('is-show');
+    }, 2200);
+  }
+
+  /* ---------- 搜索反馈 ---------- */
+  var searchForm = document.getElementById('bhSearchForm');
+  var searchInput = document.getElementById('bhSearchInput');
+  var searchFeedback = document.getElementById('bhSearchFeedback');
+  var searchIndex = [
+    {keys:['钢笔','测评','笔尖'], tip:'《三支百元钢笔横评》等 12 支测评内容'},
+    {keys:['手帐','排版','拼贴'], tip:'《一周手帐排版》等 9 支教程内容'},
+    {keys:['木作','木盒','手作'], tip:'《从一块边角料开始》等 14 支手作内容'},
+    {keys:['纸','克重','纸张'], tip:'《80g、100g、120g》等 7 支科普内容'},
+    {keys:['收纳','桌面','整理'], tip:'《1.2 米书桌的极限收纳》等 11 支内容'},
+    {keys:['访谈','匠人','工厂'], tip:'《造笔的人》专题等 6 集访谈内容'},
+    {keys:['城市','文具店','巷子'], tip:'《藏在老巷二楼的文具店》等 8 支城市内容'},
+    {keys:['亲子','孩子','涂鸦'], tip:'《孩子第一次写自己的名字》等 5 支内容'}
+  ];
+  function doSearch(){
+    if(!searchFeedback) return;
+    var q = (searchInput && searchInput.value || '').trim();
+    if(!q){
+      searchFeedback.innerHTML = '输入关键词试试，例如：钢笔、手帐、木作。';
+      searchFeedback.classList.add('is-open');
+      return;
+    }
+    var hit = null;
+    for(var i=0;i<searchIndex.length;i++){
+      var item = searchIndex[i];
+      for(var j=0;j<item.keys.length;j++){
+        if(q.indexOf(item.keys[j]) > -1 || item.keys[j].indexOf(q) > -1){ hit = item; break; }
+      }
+      if(hit) break;
+    }
+    if(hit){
+      searchFeedback.innerHTML = '找到与 <span>' + q.replace(/[<>]/g,'') + '</span> 相关的内容：' + hit.tip + '。已为你定位到相关内容区域。';
+    } else {
+      searchFeedback.innerHTML = '暂未找到与 <span>' + q.replace(/[<>]/g,'') + '</span> 完全匹配的内容，可尝试“钢笔”“手作”“纸张”等词。';
+    }
+    searchFeedback.classList.add('is-open');
+  }
+  if(searchForm){
+    searchForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      doSearch();
+      var stream = document.getElementById('bh-stream');
+      if(stream && searchInput && searchInput.value.trim()){
+        stream.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+    });
+  }
+  if(searchInput){
+    searchInput.addEventListener('input', function(){
+      if(searchFeedback && !searchInput.value.trim()){
+        searchFeedback.classList.remove('is-open');
+      }
+    });
+    document.addEventListener('click', function(e){
+      if(searchFeedback && searchForm && !searchForm.contains(e.target) && e.target !== searchFeedback){
+        searchFeedback.classList.remove('is-open');
+      }
+    });
+  }
+
+  /* ---------- 点赞 ---------- */
+  document.querySelectorAll('[data-bh-like]').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      var span = btn.querySelector('span');
+      var n = span ? parseInt(span.textContent, 10) || 0 : 0;
+      var liked = btn.classList.toggle('is-liked');
+      if(span) span.textContent = liked ? n + 1 : Math.max(0, n - 1);
+      showToast(liked ? '已加入你的喜欢' : '已取消喜欢');
+    });
+  });
+
+  /* ---------- 标签筛选 ---------- */
+  var cards = Array.prototype.slice.call(document.querySelectorAll('#bhStreamGrid [data-bh-tag]'));
+  var filterBar = document.createElement('div');
+  filterBar.style.cssText = 'display:flex;gap:10px;flex-wrap:wrap;margin:0 0 28px;';
+  var tags = ['全部','教程','访谈','收纳','科普','日常','亲子'];
+  tags.forEach(function(t, i){
+    var b = document.createElement('button');
+    b.textContent = t;
+    b.style.cssText = 'padding:7px 18px;border-radius:999px;font-size:13px;font-weight:700;border:1.5px solid #f0e2d8;background:#fff;color:'+(i===0?'#fff':'#6a5c55')+';'+(i===0?'background:#ff6b3d;border-color:#ff6b3d;':'');
+    b.dataset.tag = t;
+    b.addEventListener('click', function(){
+      filterBar.querySelectorAll('button').forEach(function(x){
+        x.style.background = '#fff';
+        x.style.color = '#6a5c55';
+        x.style.borderColor = '#f0e2d8';
+      });
+      b.style.background = '#ff6b3d';
+      b.style.color = '#fff';
+      b.style.borderColor = '#ff6b3d';
+      cards.forEach(function(card){
+        var ok = t === '全部' || card.getAttribute('data-bh-tag') === t;
+        card.style.display = ok ? '' : 'none';
+      });
+    });
+    filterBar.appendChild(b);
+  });
+  var grid = document.getElementById('bhStreamGrid');
+  if(grid && grid.parentNode){
+    grid.parentNode.insertBefore(filterBar, grid);
+  }
+
+  /* ---------- 弹窗 ---------- */
+  var modalMask = document.getElementById('bhModalMask');
+  var modalBody = document.getElementById('bhModalBody');
+  var modalClose = document.getElementById('bhModalClose');
+
+  var modalContent = {
+    submit: '<h3 id="bhModalTitle">成为笔盒创作者</h3><p class="bh-modal-sub">填写以下信息，编辑团队会在七个工作日内与你联系。请确保联系方式准确。</p>' +
+      '<form id="bhSubmitForm">' +
+      '<label for="bhName">你的昵称</label><input id="bhName" type="text" placeholder="例如：苏木笔记" required>' +
+      '<label for="bhContact">联系方式</label><input id="bhContact" type="text" placeholder="邮箱或微信号" required>' +
+      '<label for="bhDirection">创作方向</label><input id="bhDirection" type="text" placeholder="例如：钢笔测评 / 木作教程 / 城市探索">' +
+      '<label for="bhIdea">想拍的内容</label><textarea id="bhIdea" rows="3" placeholder="用一两句话描述你的选题或想法"></textarea>' +
+      '<div class="bh-modal-actions"><button type="button" class="bh-btn bh-btn-ghost" data-bh-close>取消</button><button type="submit" class="bh-btn bh-btn-primary">提交申请</button></div>' +
+      '</form>',
+    share: '<h3 id="bhModalTitle">分享笔盒</h3><p class="bh-modal-sub">把这期内容分享给同样喜欢书写与手作的朋友。</p>' +
+      '<div class="bh-share-list">' +
+      '<a href="javascript:void(0)" data-bh-copy>复制链接</a>' +
+      '<a href="javascript:void(0)" data-bh-share="微信">微信</a>' +
+      '<a href="javascript:void(0)" data-bh-share="微博">微博</a>' +
+      '<a href="javascript:void(0)" data-bh-share="QQ">QQ</a>' +
+      '</div>'
+  };
+
+  function openModal(type){
+    if(!modalMask || !modalBody || !modalContent[type]) return;
+    modalBody.innerHTML = modalContent[type];
+    modalMask.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(){
+    if(!modalMask) return;
+    modalMask.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('[data-bh-modal]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      openModal(btn.getAttribute('data-bh-modal'));
+    });
+  });
+  if(modalClose) modalClose.addEventListener('click', closeModal);
+  if(modalMask){
+    modalMask.addEventListener('click', function(e){
+      if(e.target === modalMask) closeModal();
+      if(e.target.matches('[data-bh-close]')) closeModal();
+    });
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeModal();
+  });
+
+  /* 弹窗内事件委托 */
+  document.addEventListener('click', function(e){
+    var t = e.target;
+    if(t.matches('[data-bh-copy]')){
+      e.preventDefault();
+      var text = '笔盒 BIHE VIDEO · 文具与手作生活视频品牌';
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(function(){
+          showToast('链接已复制到剪贴板');
+        }).catch(function(){
+          showToast('复制失败，请手动复制');
+        });
+      } else {
+        showToast('当前环境不支持自动复制');
+      }
+    }
+    if(t.matches('[data-bh-share]')){
+      e.preventDefault();
+      showToast('已准备分享到' + t.getAttribute('data-bh-share'));
+    }
+  });
+
+  document.addEventListener('submit', function(e){
+    if(e.target && e.target.id === 'bhSubmitForm'){
+      e.preventDefault();
+      var name = document.getElementById('bhName');
+      if(name && !name.value.trim()){
+        showToast('请先填写昵称');
+        return;
+      }
+      closeModal();
+      showToast('申请已提交，感谢你的信任');
+    }
+  });
+
+  /* ---------- 回到顶部 ---------- */
+  var backTop = document.getElementById('bhBackTop');
+  if(backTop){
+    backTop.addEventListener('click', function(){
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  }
+
+  /* ---------- 滚动监听 ---------- */
+  var ticking = false;
+  window.addEventListener('scroll', function(){
+    if(ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(function(){
+      syncNav();
+      if(backTop){
+        if(window.scrollY > 520) backTop.classList.add('is-show');
+        else backTop.classList.remove('is-show');
+      }
+      ticking = false;
+    });
+  });
+  window.addEventListener('load', syncNav);
+  syncNav();
+
+})();
+</script>
+</body>
+  </html>
